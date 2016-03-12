@@ -11,6 +11,6 @@ TODO
 - Code Cleanup!
 
 Setup
-sudo ln -s piPlate.service /etc/systemd/system/piPlate.service
+sudo cp piPlate.service /etc/systemd/system/piPlate.service
 sudo systemctl enable piPlate.service
 sudo systemctl start piPlate.service

@@ -31,7 +31,9 @@ def getIPAddress(ifname):
 
 # Begin Program Logic
 lcd.clear()
-lcd.message('Morgoth is\nalive!!')
+
+hostname = subprocess.getoutput('hostname')
+lcd.message(hostname + ' is\nalive!!')
 time.sleep(5)
 lcd.clear()
 

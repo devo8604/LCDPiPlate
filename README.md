@@ -1,6 +1,6 @@
 LCDPiPlate
 
-"Pi Plate: Serving you delicious information, the easy way"
+"Pi Plate: Serving you delicious information, the Raspberry Pi way"
 GitHub Web Page: http://devo8604.github.io/LCDPiPlate
 
 My implementation of displaying information on Adafruit Pi Hat

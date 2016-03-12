@@ -1,4 +1,7 @@
 LCDPiPlate
+
+"Pi Plate: Serving you delicious information, the easy way"
+
 My implementation of displaying information on Adafruit Pi Hat
 Uses Adafruit's CharLCD Library: https://github.com/adafruit/Adafruit_Python_CharLCD
 

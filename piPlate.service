@@ -1,0 +1,11 @@
+[Unit]
+Description=Starts System Information script to display info on LCD hat
+After=network.target systemd-networkd-wait-online.service
+
+[Service]
+Type=Simple
+ExecStart=/home/dsmith/Scripts/LCD/piPlate.py
+
+[Install]
+WantedBy=multi-user.target
+

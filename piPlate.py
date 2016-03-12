@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# Example using a character LCD plate.
 
 
 # Module imports

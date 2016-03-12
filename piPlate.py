@@ -22,6 +22,7 @@ import time
 import Adafruit_CharLCD as LCD
 import time
 import subprocess	
+import re
 
 # Initialize the LCD using the pins 
 lcd = LCD.Adafruit_CharLCDPlate()
@@ -38,10 +39,15 @@ def getCpuGov():
 	    speed = int(f.read())/1000
 	    return repr(speed) + 'MHz'
 
-
+'''
 def getIPAddress(ifname):
 	ipAddrOut = subprocess.getoutput('ip addr show dev ' + ifname + ' | grep inet | awk \'NR=1{printf $2; exit}\'')
 	return ipAddrOut
+
+'''
+# non-working copy of getting ip
+def getIPAddress(ifname):
+	ipAddrOut = subprocess.Popen(['ip', 'addr', 'show', 'dev', ifname])
 
 
 # Begin Program Logic

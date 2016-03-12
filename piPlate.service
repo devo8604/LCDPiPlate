@@ -4,7 +4,8 @@ After=network.target systemd-networkd-wait-online.service
 
 [Service]
 Type=Simple
-ExecStart=/home/dsmith/Scripts/LCD/piPlate.py
+ExecStart=/home/dsmith/Scripts/LCD/piPlate.py --start 1
+ExecStop=/home/dsmith/Scripts/LCD/piPlate.py --stop 0
 
 [Install]
 WantedBy=multi-user.target

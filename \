@@ -28,13 +28,10 @@ import argparse
 # Initialize the LCD using the pins 
 lcd = LCD.Adafruit_CharLCDPlate()
 
-
 # Arguments Parser
 parser = argparse.ArgumentParser()
-parser.add_argument('--start', help='Starts Script', nargs='?')
-parser.add_argument('--stop', help='Stops Script', nargs='?')
+parser.add_argument('--start')
 args = parser.parse_args()
-
 
 def getCpuTemp():
         with open('/sys/class/thermal/thermal_zone0/temp') as f:
@@ -56,13 +53,12 @@ def getIPAddress(ifname):
 # Begin Program Logic
 lcd.clear()
 
+hostname = subprocess.getoutput('hostname')
+lcd.message(hostname + ' is\nalive!!')
+time.sleep(5)
+lcd.clear()
 
 if args.start:
-	hostname = subprocess.getoutput('hostname')
-	lcd.message(hostname + ' is\nalive!!')
-	time.sleep(5)
-	lcd.clear()
-
 	while 1:
 		h = 0
 		i = 0
@@ -84,12 +80,3 @@ if args.start:
 			i += 1
 		time.sleep(2)
 		lcd.clear()
-
-
-if args.stop:
-	hostname = subprocess.getoutput('hostname')
-	lcd.message(hostname + ' is\ngoing down!!')
-
-	lcd.clear()
-	lcd.set_backlight(0)
-

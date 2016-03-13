@@ -44,7 +44,7 @@ def getCpuTemp():
 
 def getCpuGov():
 	with open('/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq') as f:
-	    speed = int(f.read())/1000
+	    speed = int(int(f.read())/1000)
 	    return repr(speed) + 'MHz'
 
 
@@ -88,8 +88,7 @@ if args.start:
 
 if args.stop:
 	hostname = subprocess.getoutput('hostname')
-	lcd.message(hostname + ' is\ngoing down!!')
-
+	lcd.message(hostname + ' is\ngoing down now!!')
 	lcd.clear()
 	lcd.set_backlight(0)
 

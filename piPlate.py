@@ -38,8 +38,8 @@ args = parser.parse_args()
 
 def getCpuTemp():
         with open('/sys/class/thermal/thermal_zone0/temp') as f:
-            readableTemp = float(f.read())/1000.
-            return repr(readableTemp) + 'C'
+            readableTemp = round(((int(f.read())/1000) * 9 / 5 + 32),2)
+            return repr(readableTemp) + 'F'
 
 
 def getCpuGov():

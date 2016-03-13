@@ -31,8 +31,8 @@ lcd = LCD.Adafruit_CharLCDPlate()
 
 # Arguments Parser
 parser = argparse.ArgumentParser()
-parser.add_argument('--start', help='Starts Script', nargs='?')
-parser.add_argument('--stop', help='Stops Script', nargs='?')
+parser.add_argument('--start', help='Starts Script', nargs='?', const=1)
+parser.add_argument('--stop', help='Stops Script', nargs='?', const=1)
 args = parser.parse_args()
 
 
